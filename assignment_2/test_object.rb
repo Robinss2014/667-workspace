@@ -6,42 +6,42 @@
 
 class TestObject
   # attribute reader
-  attr_reader :test_fill, :test_size
+  attr_reader :fill, :size
 
-  def initialize(fill, size)
+  def initialize(test_fill, test_size)
     # instance variables 
-    @test_fill = fill
-    @test_size = size
+    @fill = test_fill
+    @size = test_size
 
     # when size is not a number, raise an Error
-    unless size.is_a? Numeric
+    unless test_size.is_a? Numeric
     	raise ArgumentError
     end
   end
   
   # add a member function array
-  # return an array of size test_size, filled with test_fill
+  # return an array of size, filled with fill
   def array
-  	(1..test_size).map{ |i| "#{test_fill}" }
+  	(1..size).map{ |i| "#{fill}" }
   end
 
   # add a member function fill
-  # return test_fill
+  # return fill
   def fill
-  	@test_fill
+  	@fill
   end
 
   # add a member function size
-  # return test_size
+  # return size
   def size
-  	@test_size
+  	@size
   end
 
   # add a member function odd?
-  # return false when the test_size is even
-  # return true when the test_size is odd
+  # return false when the size is even
+  # return true when the size is odd
   def odd?
-  	@test_size % 2 != 0
+  	@size % 2 != 0
   end
 
 end
