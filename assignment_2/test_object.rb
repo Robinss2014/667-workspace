@@ -8,11 +8,13 @@ class TestObject
   attr_reader :test_fill, :test_size
 
   def initialize(str1, str2)
+    @test_fill = str1
+    @test_size = str2
+
     unless str2.is_a? Numeric
     	raise ArgumentError
     end
-    @test_fill = str1
-    @test_size = str2
+
   end
 
   def array
